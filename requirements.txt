@@ -1,4 +1,4 @@
 #external requirements
 flask
-flask-corsrequirements
+flask-cors
 cianparser
