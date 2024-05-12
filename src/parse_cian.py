@@ -3,7 +3,7 @@ import pandas as pd
 import datetime
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")
+# config = dotenv_values(".env")
 moscow_parser = cianparser.CianParser(location="Москва")
 
 
