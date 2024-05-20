@@ -1,11 +1,11 @@
 """House price prediction service"""
 
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
-
 
 def predict(in_data: dict) -> int:
     """ Predict house price from input data parameters.
@@ -15,14 +15,12 @@ def predict(in_data: dict) -> int:
     :rtype: int
     """
     area = float(in_data['area'])
-    AVG_PRICE = 200_000                 # RUB / m2
+    AVG_PRICE = 200_000  # RUB / m2
     return int(area * AVG_PRICE)
-
 
 @app.route("/")
 def home():
     return '<h1>Housing price service.</h1> Use /predict endpoint'
-
 
 @app.route("/predict", methods=['POST'])
 def predict_web_serve():
@@ -31,6 +29,9 @@ def predict_web_serve():
     price = predict(in_data)
     return {'price': price}
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
