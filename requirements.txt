@@ -7,4 +7,3 @@ boto3
 python-dotenv
 PyGithub
 jupyter
-sklearn
