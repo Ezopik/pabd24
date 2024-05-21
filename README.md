@@ -39,6 +39,9 @@ i - is the argument we use in the function. In this case, the path to the file o
 ### 3.Download data to your local machine 
 <li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
 
+```sh
+python src/download_from_s3.py
+``` 
 ### 4. Data preprocessing 
 <li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/preprocess_data.py">preprocess_data.py</a></strong> Script for data preprocessing.</li> 
 
