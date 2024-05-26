@@ -14,7 +14,8 @@ def upload_to_yandex_cloud(file_path, aws_access_key_id, aws_secret_access_key):
     )
 
     bucket_name = 'pabd24'
-    object_name = f'{YOUR_ID}/' + os.path.basename(file_path)
+    # Путь на Яндекс.Диске, где будет сохранен файл
+    object_name = f'{YOUR_ID}/data/raw/{os.path.basename(file_path)}'
     client.upload_file(file_path, bucket_name, object_name)
 
 
