@@ -17,12 +17,12 @@ logging.basicConfig(
     format='%(asctime)s %(message)s')
 
 
-# IN_FILES = ['data/raw/1_2024-05-07-21-21-39.csv',
-#             'data/raw/2_2024-05-07-21-29-59.csv',
-#             'data/raw/3_2024-05-07-21-39-27.csv']
-IN_FILES = ['1_2024-05-07-21-21-39.csv',
-            '2_2024-05-07-21-29-59.csv',
-            '3_2024-05-07-21-39-27.csv']
+IN_FILES = ['data/raw/1_2024-05-07-21-21-39.csv',
+            'data/raw/2_2024-05-07-21-29-59.csv',
+            'data/raw/3_2024-05-07-21-39-27.csv']
+# IN_FILES = ['1_2024-05-07-21-21-39.csv',
+#             '2_2024-05-07-21-29-59.csv',
+#             '3_2024-05-07-21-39-27.csv']
 OUT_TRAIN = 'data/proc/train.csv'
 OUT_VAL = 'data/proc/val.csv'
 
