@@ -52,9 +52,9 @@ NOTE: this script prepares data for simple paired linear regression model, howev
 To design the features, data were used about the city district, district (12 in total) where the apartment is located. The file with the mapping is <a href="https://github.com/Ezopik/pabd24/blob/main/mapping/county.txt">here</a></li> 
 
 ### 6. Flask app launch
-
-todo
-
+```sh
+python src/predict_app.py
+``` 
 ### 7. Service usage through web-interface
 
 For service usage use this file `web/index.html`.  
