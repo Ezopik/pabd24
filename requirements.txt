@@ -8,3 +8,4 @@ python-dotenv
 PyGithub
 jupyter
 dvc[s3]
+flask_httpauth
