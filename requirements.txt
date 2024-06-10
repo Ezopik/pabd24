@@ -1,11 +1,16 @@
-#external requirements
+# external requirements
 flask
 flask-cors
 cianparser
+scikit-learn
 pandas
+datetime
 boto3
 python-dotenv
-PyGithub
 jupyter
-dvc[s3]
+matplotlib
+numpy
 flask_httpauth
+joblib
+requests
+dvc[s3]
