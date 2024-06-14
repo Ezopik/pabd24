@@ -1,62 +1,61 @@
-
-
 # Predictive Big Data Analytics
 
-In this repo I create a web-app which determines the price for a flat in Moscow using ML-model under the hood
+This repository contains a web app that predicts flat prices in Moscow using a machine learning model.
 
-## Installation 
+## Installation
 
-Clone the repo, create vertual environment, activate and install dependencies:  
+Clone the repository, create a virtual environment, activate it, and install the dependencies:
 
 ```sh
 git clone https://github.com/Ezopik/pabd24
 cd pabd24
 python -m venv venv
 
-#source venv/bin/activate  # mac or linux
-.\venv\Scripts\activate   # windows
+# For macOS or Linux
+# source venv/bin/activate 
+
+# For Windows
+.\venv\Scripts\activate
 
 pip install -r requirements.txt
 ```
 
 ## Usage
 
-### 1. Data collection
-<li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for parsing flats charachteristics (e.g. price, location, meters etc.).</li>
+### 1. Data Collection
+Use the [parse_cian.py](https://github.com/Ezopik/pabd24/blob/main/src/parse_cian.py) script to gather flat characteristics (e.g., price, location, size).
 
 ```sh
 python src/parse_cian.py 
-```  
+```
 
-### 2. Upload data to S3 storage
-<li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/upload_to_s3.py">upload_to_s3.py</a></strong> Script for uploading parsed files to S3 storage.</li> 
-To access the storage, copy the file`.env` to the root of the project.  
+### 2. Upload Data to S3 Storage
+The [upload_to_s3.py](https://github.com/Ezopik/pabd24/blob/main/src/upload_to_s3.py) script uploads the parsed data files to S3 storage. Ensure the `.env` file is in the project's root directory.
 
 ```sh
 python src/upload_to_s3.py -i data/raw/file.csv
 ```
-i - is the argument we use in the function. In this case, the path to the file of our function is specified.
-### 3.Download data to your local machine 
-<li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
+The `-i` argument specifies the path to the file to be uploaded.
+
+### 3. Download Data to Local Machine
+The [download_from_s3.py](https://github.com/Ezopik/pabd24/blob/main/src/download_from_s3.py) script downloads files from S3 storage to your local machine.
 
 ```sh
 python src/download_from_s3.py
-``` 
-### 4. Data preprocessing 
-<li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/preprocess_data.py">preprocess_data.py</a></strong> Script for data preprocessing.</li> 
+```
 
-NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step).
+### 4. Data Preprocessing
+Use the [preprocess_data.py](https://github.com/Ezopik/pabd24/blob/main/src/preprocess_data.py) script to preprocess the data.
 
-### 5. Model training
-<li><strong><a href="https://github.com/Ezopik/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for data process and model training.</li> 
-To design the features, data were used about the city district, district (12 in total) where the apartment is located. The file with the mapping is <a href="https://github.com/Ezopik/pabd24/blob/main/mapping/county.txt">here</a></li> 
+Note: This script prepares data for a simple paired linear regression model. For models using multiple features, preprocessing is included in the training script.
 
-### 6. Flask app launch
+### 5. Model Training
+The [train_model.py](https://github.com/Ezopik/pabd24/blob/main/src/train_model.py) script handles data processing and model training. It uses information about the city district and the specific district (12 in total) where the apartment is located. The mapping file is available [here](https://github.com/Ezopik/pabd24/blob/main/mapping/county.txt).
+
+### 6. Launch the Flask App
 ```sh
 python src/predict_app.py
-``` 
-### 7. Service usage through web-interface
+```
 
-For service usage use this file `web/index.html`.  
-
-
+### 7. Use the Service via Web Interface
+To use the service, open `web/index.html`.
