@@ -3,9 +3,8 @@ import requests
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
-ENDPOINT = 'http://192.144.12.9:8000'
+ENDPOINT = 'http://192.144.12.9:5000'
 HEADERS = {"Authorization": f"Bearer {config['APP_TOKEN']}"}
-
 
 class TestApi(unittest.TestCase):
     def test_home(self):
