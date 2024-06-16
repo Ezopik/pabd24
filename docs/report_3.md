@@ -18,9 +18,9 @@
 ### Результаты и обсуждение
 1) При запуске `predict_io_bounded` на сервере gunicorn prom с мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/gunicorn_io_bounded.txt). Все запросы обрабатываются последовательно, в среднем за 5 секунд.
 
-2) При запуске `predict_cpu_bounded` на сервере gunicorn prom с n=90_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/gunicorn_cpu_multithread.txt). Все запросы обрабатываются последовательно, в среднем за 35 секунд. Сервер падает с n = 95_000_000.
+2) При запуске `predict_cpu_bounded` на сервере gunicorn prom с n=90_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/gunicorn_cpu_bounded.txt). Все запросы обрабатываются последовательно, в среднем за 35 секунд. Сервер падает с n = 95_000_000.
 
-3) При запуске `predict_cpu_multithread` на сервере gunicorn prom с n=420_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/test_gunicorn_mult_75mln.txt). Все запросы обрабатываются последовательно, в среднем за 11.3 секунды. Сервер падает с n = 450_000_000.
+3) При запуске `predict_cpu_multithread` на сервере gunicorn prom с n=420_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/gunicorn_cpu_multithread.txt). Все запросы обрабатываются последовательно, в среднем за 11.3 секунды. Сервер падает с n = 450_000_000.
 
 4) При запуске `predict_io_bounded` на сервере flask dev мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/flask_io_bounded.txt). Все запросы обрабатываются одновременно, в среднем за 1.02 секунд.
  
