@@ -1,0 +1,34 @@
+C:\Users\7ivan\.conda\envs\Kinopoisk\python.exe C:\Users\7ivan\PycharmProjects\pabd24\test\test_parallel.py 
+Waited 0.91 sec {
+  "price": 234999995
+}
+ Waited 1.17 sec {
+  "price": 469999990
+}
+ Waited 1.29 sec {
+  "price": 704999985
+}
+ Waited 1.25 sec {
+  "price": 939999980
+}
+ Waited 1.33 sec {
+  "price": 1174999975
+}
+ Waited 1.36 sec {
+  "price": 1409999970
+}
+ Waited 1.42 sec {
+  "price": 1644999965
+}
+ Waited 1.40 sec {
+  "price": 1879999960
+}
+ Waited 1.42 sec {
+  "price": 2114999955
+}
+ Waited 1.38 sec {
+  "price": 2349999950
+}
+
+
+Process finished with exit code 0
