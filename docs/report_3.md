@@ -26,7 +26,7 @@
  
 5) При запуске `predict_cpu_bounded` на сервере flask dev с n=9_500_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/flask_cpu_bounded.txt). Все запросы обрабатываются одновременно, в среднем за 5.6 секунд.
 
-6) При запуске `predict_cpu_multithread` на сервере flask dev с n=47_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/main/log/flask_cpu_multithread.txt). Все запросы обрабатываются одновременно, в среднем за 1.3 секунд.
+6) При запуске `predict_cpu_multithread` на сервере flask dev с n=47_000_000 мы получили [результат](https://github.com/Ezopik/pabd24/blob/main/log/flask_cpu_multithread.txt). Все запросы обрабатываются одновременно, в среднем за 1.3 секунд.
 
 ### Вывод
 На основе результатов тестирования можно сделать следующие выводы:
