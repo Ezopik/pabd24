@@ -32,7 +32,7 @@ def predict_cpu_multithread(area, n=420_000_000):
     return int(area * avg_price)
 
 
-MODEL_SAVE_PATH = 'models/linear_regression_v01.joblib'
+MODEL_SAVE_PATH = 'models/linear_regression_v02.joblib'
 
 app = Flask(__name__)
 CORS(app)
@@ -60,8 +60,13 @@ def predict(in_data: dict) -> int:
     :return: House price, RUB.
     :rtype: int
     """
-    area = float(in_data['area'])
-    price = predict_cpu_multithread(area)
+    area = float(in_data['total_meters'])
+    floor = float(in_data['floor'])
+    floors_count = float(in_data['floors_count'])
+    rooms_count = float(in_data['rooms_count'])
+    price_per_month = float(in_data['price_per_month'])
+    # price = predict_cpu_multithread(area)
+    price = model.predict([[area, floor, floors_count, rooms_count, price_per_month]])
     return int(price)
 
 
@@ -76,7 +81,7 @@ def predict_web_serve():
     """Dummy service"""
     in_data = request.get_json()
     price = predict(in_data)
-    area = in_data["area"]
+    # area = in_data["area"]
     # price = predict_io_bounded(area)
     return {'price': price}
 
