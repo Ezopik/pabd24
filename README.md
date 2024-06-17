@@ -65,4 +65,8 @@ to run docker use
 ```sh
 docker run -p 8000:8000 ezopik/pabd24:nm
 ```
-
+ ### 9. Price_predict_address
+Address for price prediction service, please use
+```sh
+http://192.144.12.9:8000
+```
