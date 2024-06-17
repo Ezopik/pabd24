@@ -64,9 +64,8 @@ def predict(in_data: dict) -> int:
     floor = float(in_data['floor'])
     floors_count = float(in_data['floors_count'])
     rooms_count = float(in_data['rooms_count'])
-    price_per_month = float(in_data['price_per_month'])
     # price = predict_cpu_multithread(area)
-    price = model.predict([[area, floor, floors_count, rooms_count, price_per_month]])
+    price = model.predict([[area, floor, floors_count, rooms_count]])
     return int(price)
 
 

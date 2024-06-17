@@ -72,7 +72,7 @@ def main(args):
     df_train = pd.read_csv(TRAIN_DATA)
 
     # Добавление новых фичей
-    features = ['total_meters', 'floor', 'floors_count', 'rooms_count', 'price_per_month']
+    features = ['total_meters', 'floor', 'floors_count', 'rooms_count']
     df_train.fillna(0, inplace=True)  # Заполнение пропущенных значений нулями или другими значениями
 
     x_train = df_train[features]
