@@ -59,3 +59,10 @@ python src/predict_app.py
 
 ### 7. Use the Service via Web Interface
 To use the service, open `web/index.html`.
+
+### 8. Docker
+to run docker use
+```sh
+docker run -p 8000:8000 ezopik/pabd24:nm
+```
+
